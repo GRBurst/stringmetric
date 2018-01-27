@@ -18,35 +18,35 @@ val commonSettings: Seq[Def.Setting[_]] = Seq(
             url = url("https://www.mnemotix.com/")
         )
     ),
-    pomExtra :=
-        <url>http://rockymadden.com/stringmetric/</url>
-            <licenses>
-                <license>
-                    <name>MIT</name>
-                    <distribution>repo</distribution>
-                </license>
-            </licenses>
-            <scm>
-                <url>git@github.com:rockymadden/stringmetric.git</url>
-                <connection>scm:git:git@github.com:rockymadden/stringmetric.git</connection>
-            </scm>
-            <developers>
-                <developer>
-                    <id>rockymadden</id>
-                    <name>Rocky Madden</name>
-                    <url>http://rockymadden.com/</url>
-                </developer>
-            </developers>,
-    pomIncludeRepository := { _ => false },
-    publishMavenStyle := true,
-    publishArtifact := true,
-    publishTo := Some(
-        if (isSnapshot.value)
-            Opts.resolver.sonatypeSnapshots
-        else
-            Opts.resolver.sonatypeStaging
-    ),
-    updateOptions := updateOptions.value.withGigahorse(false)
+    // pomExtra :=
+    //     <url>http://rockymadden.com/stringmetric/</url>
+    //         <licenses>
+    //             <license>
+    //                 <name>MIT</name>
+    //                 <distribution>repo</distribution>
+    //             </license>
+    //         </licenses>
+    //         <scm>
+    //             <url>git@github.com:rockymadden/stringmetric.git</url>
+    //             <connection>scm:git:git@github.com:rockymadden/stringmetric.git</connection>
+    //         </scm>
+    //         <developers>
+    //             <developer>
+    //                 <id>rockymadden</id>
+    //                 <name>Rocky Madden</name>
+    //                 <url>http://rockymadden.com/</url>
+    //             </developer>
+    //         </developers>,
+    // pomIncludeRepository := { _ => false },
+    // publishMavenStyle := true,
+    // publishArtifact := true,
+    // publishTo := Some(
+    //     if (isSnapshot.value)
+    //         Opts.resolver.sonatypeSnapshots
+    //     else
+    //         Opts.resolver.sonatypeStaging
+    // ),
+    // updateOptions := updateOptions.value.withGigahorse(false)
 )
 
 lazy val root = Project("stringmetric", file("."))
